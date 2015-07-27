@@ -37,7 +37,6 @@ def home():
         posts.append(dict(title=row[0], description=row[1]))
 
     # posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
-
     # print posts
 
     g.db.close()
