@@ -28,7 +28,7 @@ app.database = "sample.db"
 @app.route('/')
 #@login_required
 def home():
-    # return "Hello, Chance!" #return a string
+    # return "Hello, Chance!"
     g.db = connect_db()
     cur = g.db.execute('SELECT * FROM posts')
     posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
