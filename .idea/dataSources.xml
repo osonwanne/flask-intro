@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1455432631">
+    <data-source source="LOCAL" name="posts" uuid="9dfcd3a9-7049-4468-b09f-8566632bc6f8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\bosonwanne\PycharmProjects\flask-intro\posts.db</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
