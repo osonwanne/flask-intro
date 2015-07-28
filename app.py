@@ -3,14 +3,14 @@ from flask import Flask, render_template, redirect,\
     url_for, request, session, flash, g
 from flask.ext.sqlalchemy import SQLAlchemy
 # from functools import wraps
-#import sqlite3
+import sqlite3
 
 # create the application object
 app = Flask(__name__)
 
 # config
 app.secret_key = "my precious"
-app.config['SQLALCHEMY_DATABASE_URL'] = 'sqlite:///posts.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///posts.db'
 
 # create the sqlachemy object
 db = SQLAlchemy(app)
@@ -36,7 +36,7 @@ def home():
     cur = g.db.execute('SELECT * FROM posts')
     posts = []
     for row in cur.fetchall():
-        posts.append(dict(title=row[0], description=row[1]))
+        posts.append(dict(title=row[1], description=row[2]))
     # posts = [dict(title=row[0], description=row[1]) for row in cur.fetchall()]
     # print posts
     g.db.close()
@@ -65,8 +65,8 @@ def logout():
     flash('You were just logged out!')
     return redirect(url_for('welcome'))
 
-#def connect_db():
-#    return sqlite3.connect(app.database)
+def connect_db():
+    return sqlite3.connect('posts.db')
 
 
 if __name__  == '__main__':
